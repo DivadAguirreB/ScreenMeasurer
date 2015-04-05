@@ -19,7 +19,9 @@ function createInfo() {
 	blockToDisplay.style.color = "#4C4C4C";
 	blockToDisplay.style.fontFamily = "sans-serif";
 				
-	var title = document.createElement("H4");
+	var title = document.createElement("SPAN");
+	title.style.display = "block";
+	title.style.fontSize = "20px";
 	title.innerHTML = "Current Screen Size";
 				
 	var infoBlock = document.createElement("div");
