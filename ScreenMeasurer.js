@@ -1,14 +1,12 @@
 			
-function resizingWindow(){
+function startMeasuringWindow(){
 				
-	createInfo();
+	createInfoBar();
 	displayInfo(window.innerWidth + "px", window.innerHeight + "px");
-	resizeElement("body-for-content");
-				
 }
 				
 						
-function createInfo() {
+function createInfoBar() {
 	var blockToDisplay = document.createElement("DIV");
 	blockToDisplay.style.display = "block";
 	blockToDisplay.style.textAlign = "center";
@@ -39,22 +37,14 @@ function createInfo() {
 	document.body.appendChild(blockToDisplay);
 }
 
-function resize() {
+function changeDisplayedSize() {
 	displayInfo(window.innerWidth + "px", window.innerHeight + "px");
-	resizeElement("body-for-content");
 }
 
 function displayInfo(width, height) {
-	
 	document.getElementById("info").innerHTML = "Width: " + width + ' <br>Height: ' + height;	
 }
 
-
-function resizeElement(element){
-	var elementToResize = document.getElementById(element);
-	elementToResize.style.height = window.innerHeight + "px";
-}
-
-window.addEventListener("resize", resize);
-window.addEventListener("load", resizingWindow);
+window.addEventListener("resize", changeDisplayedSize);
+window.addEventListener("load", startMeasuringWindow);
 			
